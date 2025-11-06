@@ -1,4 +1,4 @@
-import math
+from math import sqrt
 from fractions import Fraction
 
 class RationalNumbersIterator:
@@ -15,7 +15,7 @@ class RationalNumbersIterator:
         if (denominator % numerator == 0):
             return True
         
-        for divisor in range(2, int(math.sqrt(numerator)) + 1):
+        for divisor in range(2, int(sqrt(numerator)) + 1):
             if numerator % divisor == 0:
                 if denominator % divisor == 0:
                     return True
@@ -26,15 +26,15 @@ class RationalNumbersIterator:
     
     def _setup_next_valid(self):
         while True:
+            if self.current_numerator is None:
+                return
+            
             if self.current_numerator >= self.current_denominator:
                 self.current_denominator += 1
                 self.current_numerator = 1
                 if self.max_denominator and self.current_denominator > self.max_denominator:
                     self.current_numerator = None
                     return
-            
-            if self.current_numerator is None:
-                return
                 
             if not self._has_common_divisor(self.current_numerator, self.current_denominator):
                 return
@@ -56,5 +56,5 @@ class RationalNumbersIterator:
         return result
 
 if __name__ == "__main__":
-    for i in RationalNumbersIterator(10):
-         print(i, end=" ")
+    for i in RationalNumbersIterator(6):
+        print(i, end=" ")
