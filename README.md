@@ -9,7 +9,7 @@ ____
 
 Таким образом, генератор должен проходить все рациональные числа, пропуская те, что могут быть сокращены до уже пройденных, например:
 
-$ \frac{1}{2} \rightarrow \frac{1}{3} \rightarrow \frac{2}{3} \rightarrow \frac{1}{4} \rightarrow  \frac{3}{4} \rightarrow ... $
+$$\frac{1}{2} \rightarrow \frac{1}{3} \rightarrow \frac{2}{3} \rightarrow \frac{1}{4} \rightarrow  \frac{3}{4} \rightarrow ... $$
 
 ____
 ## Установка виртуального окружения и запуск
